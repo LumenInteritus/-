@@ -1,0 +1,60 @@
+/*==================================
+            CIELO
+==================================*/
+
+.cielo{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:0;
+
+}
+
+.estrellas{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+.estrella{
+
+    position:absolute;
+
+    color:white;
+
+    user-select:none;
+
+    pointer-events:none;
+
+    animation:brillar 3s ease-in-out infinite;
+
+}
+
+@keyframes brillar{
+
+    0%,100%{
+
+        opacity:.3;
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.3);
+
+    }
+
+}
+

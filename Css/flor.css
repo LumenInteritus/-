@@ -1,0 +1,195 @@
+/*======================================
+                FLOR
+======================================*/
+
+#flor{
+
+    position:fixed;
+
+    left:50%;
+    bottom:0;
+
+    transform:translateX(-50%);
+
+    width:220px;
+    height:420px;
+
+    pointer-events:none;
+
+    z-index:1000000;
+
+}
+
+/*======================================
+                TALLO
+======================================*/
+
+.tallo{
+
+    position:absolute;
+
+    left:50%;
+    bottom:0;
+
+    transform:translateX(-50%);
+
+    width:7px;
+
+    height:0;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        to top,
+        #1e4721,
+        #3d8d46,
+        #7cff82
+    );
+
+    box-shadow:
+        0 0 12px rgba(120,255,120,.35);
+
+}
+
+/*======================================
+            CRECER TALLO
+======================================*/
+
+.tallo.crecer{
+
+    animation:crecerTallo 4s ease forwards;
+
+}
+
+@keyframes crecerTallo{
+
+    from{
+
+        height:0;
+
+    }
+
+    to{
+
+        height:320px;
+
+    }
+
+}
+
+/*======================================
+                HOJAS
+======================================*/
+
+.hoja{
+
+    position:absolute;
+
+    width:95px;
+    height:26px;
+
+    background:linear-gradient(
+        to right,
+        #3d8d46,
+        #78d87c,
+        #3d8d46
+    );
+
+    border-radius:100px 0 100px 0;
+
+    box-shadow:
+
+        inset 0 0 18px rgba(255,255,255,.25),
+
+        0 0 12px rgba(90,255,120,.15);
+
+    opacity:0;
+
+}
+
+/* izquierda */
+
+.hoja-izquierda{
+
+    left:50%;
+
+    bottom:105px;
+
+    transform-origin:right center;
+
+    transform:
+        translateX(-100%)
+        rotate(-28deg)
+        scale(.05);
+
+}
+
+/* derecha */
+
+.hoja-derecha{
+
+    left:50%;
+
+    bottom:165px;
+
+    transform-origin:left center;
+
+    transform:
+        rotate(28deg)
+        scale(.05);
+
+}
+
+/*============================*/
+
+.hoja.aparecer{
+
+    opacity:1;
+
+    transition:opacity .3s;
+
+}
+
+.hoja-izquierda.aparecer{
+
+animation:abrirIzquierda 2.4s cubic-bezier(.2,.8,.2,1) forwards;
+
+}
+
+.hoja-derecha.aparecer{
+
+animation:abrirDerecha 2.4s cubic-bezier(.2,.8,.2,1) forwards;
+
+}
+
+@keyframes abrirIzquierda{
+
+    from{
+
+        transform:translateX(-100%) scale(0) rotate(-35deg);
+
+    }
+
+    to{
+
+        transform:translateX(-100%) scale(1) rotate(-35deg);
+
+    }
+
+}
+
+@keyframes abrirDerecha{
+
+    from{
+
+        transform:scale(0) rotate(35deg);
+
+    }
+
+    to{
+
+        transform:scale(1) rotate(35deg);
+
+    }
+
+}

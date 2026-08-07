@@ -1,0 +1,230 @@
+.contenedor-final{
+
+    width: 100%;
+    min-height: 100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    padding:60px 20px;
+
+    box-sizing:border-box;
+
+}
+
+.contenedor-final h1{
+
+    font-size:48px;
+
+    color:#e7d3a7;
+
+    margin-bottom:40px;
+
+    text-shadow:
+    0 0 10px rgba(255,220,150,.5);
+
+}
+
+.frase{
+
+    max-width:700px;
+
+    font-size:25px;
+
+    line-height:1.8;
+
+    color:#f5f5f5;
+
+    margin-bottom:55px;
+
+    font-style:italic;
+
+}
+
+#spotify{
+
+    width:420px;
+
+    max-width:90%;
+
+    border-radius:18px;
+
+    box-shadow:
+
+    0 0 25px rgba(255,215,120,.25),
+
+    0 0 60px rgba(255,215,120,.15);
+
+    transition:.35s;
+
+}
+
+#spotify:hover{
+
+    transform:scale(1.03);
+
+}
+
+.mensaje{
+
+    max-width:650px;
+
+    margin-top:55px;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    color:#ececec;
+
+}
+
+.boton-final{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-top:70px;
+
+    padding:18px 55px;
+
+    font-size:22px;
+    font-family:Georgia, serif;
+    letter-spacing:1px;
+
+    color:#f7e8c5;
+
+    background:rgba(255,255,255,.05);
+
+    border:2px solid rgba(226,194,120,.75);
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(8px);
+
+    box-shadow:
+        0 0 15px rgba(255,215,120,.25),
+        inset 0 0 15px rgba(255,255,255,.05);
+
+    transition:.35s;
+}
+
+.boton-final:hover{
+
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 0 35px rgba(255,215,120,.45),
+        0 0 80px rgba(255,215,120,.15);
+
+    border-color:#f5d98f;
+
+}
+
+.oculto{
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+.visible{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+    transition:.8s;
+}
+
+/*==============================
+        DESPEDIDA FINAL
+==============================*/
+
+#despedida{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    background:#000;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity 5s ease;
+
+    z-index:999999;
+
+}
+
+#graciasFinal{
+
+    color:#f3e5bc;
+
+    font-size:72px;
+
+    font-family:Georgia,serif;
+
+    font-weight:normal;
+
+    letter-spacing:4px;
+
+    opacity:0;
+
+    transition:opacity 3s ease;
+
+    margin:0;
+
+}
+
+#firmaFinal{
+
+    margin-top:18px;
+
+    color:#9d9479;
+
+    font-size:22px;
+
+    letter-spacing:8px;
+
+    opacity:0;
+
+    transition:opacity 3s ease;
+
+}
+
+#despedida.visible{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+#textoFinal{
+
+    opacity:1;
+
+    transition:opacity 2.5s;
+
+}

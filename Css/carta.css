@@ -1,0 +1,1049 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    overflow-x:hidden;
+    overflow-y:hidden;
+
+    font-family:Georgia,serif;
+
+    background:
+    radial-gradient(circle at top,#1B263B 0%,#0D1B2A 45%,#050816 100%);
+
+    color:white;
+
+    width:100vw;
+    height:100vh;
+
+    transition:transform 4s ease;
+
+}
+
+body.abriendo{
+
+    filter:brightness(.82);
+
+}
+
+/*=========================
+      FONDO
+=========================*/
+
+.cielo{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+/*=========================
+          LUNA
+=========================*/
+
+.luna{
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    top:-120px;
+
+    right:-70px;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,255,255,.22),
+    rgba(220,230,255,.12) 45%,
+    transparent 75%);
+
+    filter:blur(4px);
+
+    animation:lunaFlota 10s ease-in-out infinite;
+
+}
+
+/*=========================
+        NEBULOSAS
+=========================*/
+
+.nebulosa{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    opacity:.55;
+
+    animation:nebulosaFlota 18s ease-in-out infinite;
+
+}
+
+.nebulosa.izquierda{
+
+    width:520px;
+
+    height:520px;
+
+    left:-180px;
+
+    top:120px;
+
+    background:
+    radial-gradient(circle,
+    rgba(135,70,255,.55) 0%,
+    rgba(90,130,255,.35) 45%,
+    transparent 80%);
+
+}
+
+.nebulosa.derecha{
+
+    width:460px;
+
+    height:460px;
+
+    right:-120px;
+
+    bottom:80px;
+
+    background:
+    radial-gradient(circle,
+    rgba(120,180,255,.45) 0%,
+    rgba(255,225,160,.20) 55%,
+    transparent 80%);
+
+    animation-delay:-8s;
+
+}
+
+@keyframes nebulosaFlota{
+
+    0%{
+
+        transform:translate(0,0) scale(1);
+
+    }
+
+    50%{
+
+        transform:translate(20px,-15px) scale(1.08);
+
+    }
+
+    100%{
+
+        transform:translate(0,0) scale(1);
+
+    }
+
+}
+
+.estrellas{
+
+    position:absolute;
+
+    inset:0;
+
+}
+/*
+.estrellas::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+    radial-gradient(white 1px,transparent 1px);
+
+    background-size:70px 70px;
+
+    opacity:.55;
+
+    animation:parpadeo 4s ease-in-out infinite;
+
+    transition:opacity 2s;
+    body.abriendo .estrellas::before{
+
+    opacity:.9;
+}
+}
+*/
+
+.niebla{
+
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+
+}
+
+.niebla::before,
+.niebla::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:900px;
+    height:900px;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.35;
+
+}
+
+.niebla::before{
+
+    top:-180px;
+    left:-200px;
+
+    background:
+    radial-gradient(circle,
+    rgba(80,120,255,.75),
+    transparent 70%);
+
+    animation:nebulosaAzul 18s ease-in-out infinite alternate;
+
+}
+
+.niebla::after{
+
+    bottom:-220px;
+    right:-180px;
+
+    background:
+    radial-gradient(circle,
+    rgba(170,110,255,.65),
+    transparent 70%);
+
+    animation:nebulosaMorada 22s ease-in-out infinite alternate;
+
+}
+
+/*=========================
+        PORTADA
+=========================*/
+
+.inicio{
+
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    z-index: 10;
+
+}
+
+.inicio h1{
+
+    font-size:60px;
+
+    font-weight:normal;
+
+}
+
+.inicio p{
+
+    font-size:22px;
+
+    color:#ddd;
+
+}
+
+.inicio.ocultar{
+
+    opacity:0;
+
+    transform:scale(.95);
+
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
+
+    pointer-events:none;
+
+}
+
+button{
+
+    margin-top:12px;
+
+    width:320px;
+
+    height:70px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:rgba(255,223,140,.18);
+
+    color:#ffe8a3;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    backdrop-filter:blur(8px);
+
+}
+
+button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 30px rgba(255,220,120,.4);
+
+}
+
+/*==================================
+        BOTÓN IMPERIAL
+==================================*/
+
+.boton-imperial{
+
+    width:340px;
+
+    height:72px;
+
+    border:1px solid rgba(255,230,170,.25);
+
+    border-radius:40px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,235,185,.12),
+        rgba(255,215,120,.08)
+    );
+
+    color:#f8e7b5;
+
+    font-size:24px;
+
+    font-family:Georgia,serif;
+
+    letter-spacing:1px;
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25),
+        inset 0 0 15px rgba(255,255,255,.05);
+
+    transition:all .35s ease;
+
+    overflow:hidden;
+    position:relative;
+
+    text-shadow:0 0 0 transparent;
+}
+
+.boton-imperial:hover{
+
+    text-shadow:0 0 12px rgba(255,240,180,.8);
+
+    transform:translateY(-5px) scale(1.03);
+
+    border-color:rgba(255,235,170,.55);
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,240,200,.20),
+        rgba(255,220,150,.12)
+    );
+
+    box-shadow:
+        0 18px 40px rgba(255,220,120,.18),
+        0 0 30px rgba(255,235,170,.10);
+
+}
+
+.boton-imperial:active{
+
+    transform:scale(.97);
+
+}
+
+/*==================================
+        LUZ DEL CIELO
+==================================*/
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+    radial-gradient(circle at 50% -10%,
+    rgba(170,200,255,.20),
+    transparent 55%),
+
+    radial-gradient(circle at 15% 15%,
+    rgba(120,160,255,.08),
+    transparent 35%),
+
+    radial-gradient(circle at 85% 20%,
+    rgba(255,240,180,.05),
+    transparent 40%);
+
+    animation:luzCielo 10s ease-in-out infinite;
+
+}
+
+@keyframes luzCielo{
+
+    0%{
+
+        opacity:.5;
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        opacity:.9;
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        opacity:.5;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/*=========================
+        CARTA
+=========================*/
+
+.carta{
+
+    position:absolute;
+    
+    z-index:20;
+    
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transform:translateY(-220px) scale(.95);
+
+    transition:
+        opacity .9s ease,
+        transform 1.2s cubic-bezier(.18,.9,.25,1.15);
+
+}
+
+.carta.visible{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+    transform:translateY(0) scale(1);
+
+}
+
+/*==================================
+      HALO DE LA CARTA
+==================================*/
+
+.carta::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:900px;
+
+    height:900px;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,220,140,.18) 0%,
+    rgba(255,220,140,.08) 35%,
+    transparent 70%);
+
+    filter:blur(50px);
+
+    opacity:0;
+
+    transition:opacity 1.5s ease;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+.carta.visible::before{
+
+    opacity:1;
+
+}
+
+/*=========================
+         HOJA
+=========================*/
+
+.hoja{
+
+    width:850px;
+
+    max-width:90%;
+
+    min-height:520px;
+
+    background:linear-gradient(
+
+180deg,
+
+rgba(255,252,243,.98),
+
+rgba(250,244,227,.96)
+
+);
+
+    color:#2d2d2d;
+
+    border-radius:18px;
+
+    border:1px solid rgba(185,155,95,.35);
+
+    padding:60px;
+
+box-shadow:
+    0 35px 90px rgba(0,0,0,.45),
+    0 0 80px rgba(255,225,150,.08),
+    inset 0 0 40px rgba(255,240,210,.45),
+    inset 0 0 80px rgba(170,130,70,.08),
+    0 0 140px rgba(255,220,140,.25);
+
+position:relative;
+
+overflow:visible;
+
+z-index:5;
+
+--x:50%;
+--y:50%;
+
+animation:flotarHoja 6s ease-in-out infinite;
+
+transition:transform .18s ease;
+
+transform-style:preserve-3d;
+
+transform-origin:center;
+
+will-change:transform;
+
+}
+
+/*==================================
+        TEXTURA DEL PAPEL
+==================================*/
+
+.hoja::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:18px;
+
+    background:
+
+    radial-gradient(
+        circle at var(--x) var(--y),
+        rgba(255,255,255,.45),
+        transparent 32%
+    ),
+
+    radial-gradient(
+        circle at 15% 20%,
+        rgba(255,255,255,.25),
+        transparent 28%
+    ),
+
+    radial-gradient(
+        circle at 80% 75%,
+        rgba(180,140,90,.05),
+        transparent 28%
+    );
+
+    pointer-events:none;
+
+    opacity:.9;
+
+}
+
+/*==================================
+        HALO Y DETALLE SUPERIOR
+==================================*/
+
+.hoja::after{
+
+    content:"✧";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:18px;
+
+    pointer-events:none;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.75),
+        inset 0 -1px 0 rgba(170,130,70,.12),
+        0 0 90px rgba(255,220,140,.18);
+
+    color:#b58d3d;
+
+    font-size:22px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding-top:14px;
+
+    text-shadow:0 0 10px rgba(255,220,120,.5);
+
+}
+
+.hoja h2{
+
+    text-align:center;
+
+    font-size:42px;
+
+    color:#8d6b2d;
+
+    margin-bottom:40px;
+
+    font-weight:normal;
+
+}
+
+.hoja p{
+
+    font-size:24px;
+
+    line-height:2;
+
+}
+
+@keyframes flotarHoja{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/*=========================
+      BOTÓN CONTINUAR
+=========================*/
+
+.boton-recuerdo.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.oculto{
+
+    display:none;
+
+}
+
+/*==================================
+      BOTÓN CONTINUAR
+==================================*/
+
+.boton-recuerdo{
+
+    width:280px;
+
+    height:62px;
+
+    margin:50px auto 10px;
+
+    display:block;
+
+    border:1px solid rgba(196,162,90,.65);
+
+    border-radius:16px;
+
+    background:rgba(255,247,220,.85);
+
+    color:#8d6b2d;
+
+    font-family:Georgia,serif;
+
+    font-size:20px;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:all .6s ease;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.18);
+
+}
+
+.boton-recuerdo:hover{
+
+    transform:translateY(-4px);
+
+    background:#fffaf0;
+
+    box-shadow:
+        0 18px 40px rgba(180,140,60,.25);
+
+}
+
+.boton-recuerdo.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+@keyframes lunaFlota{
+
+    0%{
+
+        transform:translateY(0);
+
+        opacity:.45;
+
+    }
+
+    50%{
+
+        transform:translateY(12px);
+
+        opacity:.65;
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+        opacity:.45;
+
+    }
+}
+
+@keyframes nebulosaAzul{
+
+    from{
+
+        transform:
+        translate(0,0)
+        scale(1);
+
+    }
+
+    to{
+
+        transform:
+        translate(120px,40px)
+        scale(1.25);
+
+    }
+
+}
+
+@keyframes nebulosaMorada{
+
+    from{
+
+        transform:
+        translate(0,0)
+        scale(1);
+
+    }
+
+    to{
+
+        transform:
+        translate(-120px,-60px)
+        scale(1.2);
+
+    }
+
+}
+
+@keyframes haloCarta{
+
+    0%{
+
+        transform:scale(1);
+
+        opacity:.45;
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+        opacity:.8;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:.45;
+
+    }
+
+}
+
+#meteoritos{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+.meteorito{
+
+    position:absolute;
+
+    width:180px;
+
+    height:2px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        white,
+
+        rgba(255,255,255,0)
+
+    );
+
+    transform:rotate(-35deg);
+
+    opacity:.9;
+
+    filter:drop-shadow(0 0 10px white);
+
+    animation:caer 1.3s linear forwards;
+
+}
+
+@keyframes caer{
+
+    from{
+
+        transform:
+        translate(0,0)
+        rotate(-35deg);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+        translate(-900px,900px)
+        rotate(-35deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/*==================================
+        DESTELLO
+==================================*/
+
+.destello{
+
+    position:fixed;
+
+    inset:0;
+
+    background:white;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:999;
+
+}
+
+.destello.activo{
+
+    animation:flash .45s ease;
+
+}
+
+@keyframes flash{
+
+    0%{
+
+        opacity:0;
+
+    }
+
+    35%{
+
+        opacity:.18;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+    }
+
+}
+
+/*==============================
+      HOJA CON SCROLL (ROSA)
+==============================*/
+
+.hoja-scroll{
+
+    height:650px;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    padding-right:18px;
+
+}
+
+/* Scroll elegante */
+
+.hoja-scroll::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.hoja-scroll::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+.hoja-scroll::-webkit-scrollbar-thumb{
+
+    background:#c9a86a;
+
+    border-radius:20px;
+
+}
+
+.hoja-scroll::-webkit-scrollbar-thumb:hover{
+
+    background:#b9924e;
+
+}

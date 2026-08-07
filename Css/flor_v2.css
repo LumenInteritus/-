@@ -1,0 +1,65 @@
+/*======================================
+            CONTENEDOR
+======================================*/
+
+#flor{
+
+    display:none;
+
+}
+
+/*======================================
+              TALLO
+======================================*/
+
+.tallo{
+
+    position:absolute;
+
+    left:50%;
+    bottom:0;
+
+    transform:translateX(-50%);
+
+    width:.55vmin;
+
+    height:0;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        to top,
+        #1f471f,
+        #49a54d,
+        #8dff92
+    );
+
+    box-shadow:0 0 18px rgba(110,255,120,.3);
+
+}
+
+/*======================================
+         CRECER TALLO
+======================================*/
+
+.tallo.crecer{
+
+    animation:crecerTallo 3s ease forwards;
+
+}
+
+@keyframes crecerTallo{
+
+    from{
+
+        height:0;
+
+    }
+
+    to{
+
+        height:42vh;
+
+    }
+
+}

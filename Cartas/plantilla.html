@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Migajeros</title>
+
+    <link rel="stylesheet" href="../Css/carta.css">
+    <link rel="stylesheet" href="../Css/cielo.css">
+
+<link rel="icon" href="../Imagenes/icono.png" type="image/png">
+
+</head>
+
+<body>
+
+    <div class="cielo">
+
+        <div class="nebulosa izquierda"></div>
+        <div class="nebulosa derecha"></div>
+        <div class="luna"></div>
+        <div class="estrellas"></div>
+        <div class="niebla"></div>
+
+    </div>
+
+    <div class="inicio">
+
+        <h1>Hay algo para ti...</h1>
+
+        <p>Presiona el botón para abrir tu carta.</p>
+
+        <button id="abrirCarta" class="boton-imperial">
+            <span>✧ Abrir mi carta ✧</span>
+        </button>
+
+    </div>
+
+    <div class="carta">
+
+        <div class="hoja">
+
+            <h2 id="tituloCarta"></h2>
+
+            <p id="texto"></p>
+
+            <button id="recuerdo" class="boton-recuerdo oculto">
+                ✧ Continuar ✧
+            </button>
+
+        </div>
+
+    </div>
+
+    <div id="meteoritos"></div>
+    <div class="destello"></div>
+
+    <!-- Música -->
+    <audio id="musica" loop preload="auto">
+        <source id="musicaSource" src="" type="audio/mpeg">
+    </audio>
+
+    <!-- Spotify -->
+    <div class="spotify oculto" id="spotify">
+        <iframe
+            id="spotifyPlayer"
+            style="border-radius:12px"
+            src=""
+            width="100%"
+            height="152"
+            frameborder="0"
+            allowfullscreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+        </iframe>
+    </div>
+
+    <script src="../Js/datos.js"></script>
+    <script src="../Js/player.js"></script>
+    <script src="../Js/plantilla.js"></script>
+    <script src="../Js/cielo.js"></script>
+
+</body>
+
+</html>
