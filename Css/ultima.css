@@ -228,3 +228,7 @@
     transition:opacity 2.5s;
 
 }
+
+body{
+    padding-bottom: 120px;
+}
