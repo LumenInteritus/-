@@ -20,7 +20,7 @@ if(persona==="rosa"){
     contenedor.innerHTML=`
         <img src="../Imagenes/Spotify/rosa1.png" id="spotify">
         <br><br>       
-        
+        <img src="../Imagenes/Spotify/rosa2.png" id="spotify">
     `;
 }else{
 
