@@ -644,3 +644,9 @@ body::before{
     }
 
 }
+
+html,
+body{
+    overflow-y: auto !important;
+    overflow-x: hidden;
+}
